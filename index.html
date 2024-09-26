@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte Bazaar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <meta name="description" content="Elevate your digital experience with our comprehensive courses and expert guidance. At Byte Bazaar, we are dedicated to providing you with the tools and knowledge needed to thrive in today's fast-paced digital world. Our innovative solutions are designed to help you stay ahead of the curve and achieve your professional goals. Our team of experienced instructors and industry professionals have carefully ensured that you receive the highest quality education and support. From web development to mobile app creation, our courses cover a wide range of topics to meet your learning needs. Join us today and take the first step towards a brighter future in the digital landscape.">
+    <meta name="keywords" content="Bybe Bazaar, Byte, Bazaar, Karo Junior, Course, Web Development,Flutter Course, Broker Website, Video Calling Website">
+    <meta name="author" content="Byte Bazaar">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger menu icon -->
+            <h1>Byte Bazaar</h1>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-btn">
+                <button onclick="toggleCart()">
+                    <img src="images/cart.svg" alt="Cart">
+                    <span id="cart-count" class="hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <div id="cartTotal"></div>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <main>
+        <section id="home">
+            <div class="home-content" class="animate-section">
+                <div class="home-text">
+                    <h2>Welcome to Byte Bazaar</h2>
+                    <p class="wel-text">Your hub for innovation in cutting-edge solutions.</p>
+                </div>
+                <div class="home-image">
+                    <img src="images/learn.jpg" alt="Welcome Image">
+                </div>
+            </div>
+            <div class="home-footer" class="animate-section">
+                <p class="additional-text">Elevate your digital experience with our comprehensive courses and expert guidance. At Byte Bazaar, we are dedicated to providing you with the tools and knowledge needed to thrive in today's fast-paced digital world. Our innovative solutions are designed to help you stay ahead of the curve and achieve your professional goals. Our team of experienced instructors and industry professionals have carefully ensured that you receive the highest quality education and support. From web development to mobile app creation, our courses cover a wide range of topics to meet your learning needs. Join us today and take the first step towards a brighter future in the digital landscape.</p>
+            </div>
+        </section>
+
+        <section id="courses" class="animate-section">
+            <h2>Our Courses</h2>
+            <div class="courses-container">
+                <div class="course">
+                    <img src="images/webdevcourse.jpeg" alt="Course 1">
+                    <h3>Web Development Course</h3>
+                    <p>₦5000</p>
+                    <a href="https://selar.co/99i5b1">
+                        <button class="detail-button">Details</button>
+                    </a>
+                    <button onclick="addToCart('Web Dev Course', 5000.00)" class="addtocart-button">Add to Cart</button>
+                </div>
+                <div class="course">
+                    <img src="images/fluttercourse.png" alt="Course 2">
+                    <h3>Flutter Course (iJob App Clone)</h3>
+                    <p>₦2500</p>
+                    <a href="https://selar.co/7y890j">
+                        <button class="detail-button">Details</button>
+                    </a>
+                    <button onclick="addToCart('Flutter Course', 2500.00)" class="addtocart-button">Add to Cart</button>
+                </div>
+                <div class="course">
+                    <img src="images/vtucourse.jpeg" alt="Course 3">
+                    <h3>VTU Platform Creation Course</h3>
+                    <p>₦5000</p>
+                    <a href="https://selar.co/202f0f">
+                        <button class="detail-button">Details</button>
+                    </a>
+                    <button onclick="addToCart('VTU Creation Course', 5000.00)" class="addtocart-button">Add to Cart</button>
+                </div>
+                <div class="course">
+                    <img src="images/vcallwebcourse.jpeg" alt="Course 4">
+                    <h3>Video Calling Website Course</h3>
+                    <p>₦1500</p>
+                    <a href="https://selar.co/55200g">
+                        <button class="detail-button">Details</button>
+                    </a>
+                    <button onclick="addToCart('Video Call Web Course', 1500.00)" class="addtocart-button">Add to Cart</button>
+                </div>
+                <div class="course">
+                    <img src="images/brokerwebcourse.jpeg" alt="Course 5">
+                    <h3>Broker Website Course</h3>
+                    <p>₦32000</p>
+                    <a href="https://selar.co/1162d9">
+                        <button class="detail-button">Details</button>
+                    </a>
+                    <button onclick="addToCart('Broker Web Course', 32000.00)" class="addtocart-button">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="animate-section">
+            <h2>About Us</h2>
+            <p>Byte Bazaar is your premier destination for purchasing expertly crafted courses designed to elevate your skills and knowledge. At Byte Bazaar, we are committed to providing you with a diverse range of high-quality courses that cater to various interests and professional needs. Our carefully curated selection ensures that you can find the right course to help you achieve your goals.</p>
+            <p>Founded with a vision to make learning accessible and impactful, Byte Bazaar bridges the gap between education and convenience. We collaborate with top educators and industry experts to bring you courses that are not only informative but also engaging and practical. Our platform allows you to easily browse, select, and purchase courses that suit your learning style and requirements.</p>
+            <p>Join us at Byte Bazaar and take the first step towards unlocking new opportunities and advancing your career. With our commitment to excellence and innovation, we are here to support your journey towards success. Discover the endless possibilities with Byte Bazaar – where learning meets convenience.</p>
+        </section>
+
+        <section id="contact" class="animate-section">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>If you have any questions or need more information about our courses, feel free to contact us. We are here to help you!</p>
+                </div>
+                <form id="contact-form" action="https://formsubmit.co/b45aae9baff95e625a8bfc26d4d0d122"  method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Byte Bazaar. All rights reserved.</p>
+    </footer>
+</body>
+</html>
